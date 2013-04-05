@@ -3,6 +3,7 @@ package CS225FinalProject.DataStructure;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * @author Kevin Mee
@@ -13,6 +14,9 @@ public class Narrative  implements Serializable{
     /**
      */
     private String date, time, narrative, followUP, initials;
+    private int painValue;
+    
+    private ArrayList<String> values;
 
     public Narrative(String date, String time, String narrative, String followUP, String initials) {
         this.date = date;
@@ -20,8 +24,34 @@ public class Narrative  implements Serializable{
         this.narrative = narrative;
         this.followUP = followUP;
         this.initials = initials;
+        this.values = new ArrayList<String>();
+        for(int i = 0; i < 6; i++)
+        {
+            values.add(" ");
+        }
+        painValue = 5;
     }
-
+    
+    public void setPainValue(int v)
+    {
+        painValue = v;
+    }
+    
+    public int getPainValue()
+    {
+        return painValue;
+    }
+    
+    public void setValues(ArrayList<String> v)
+    {
+        values = v;
+    }
+    
+    public ArrayList<String> getValues()
+    {
+        return values;
+    }
+    
     public String getDate() {
         return date;
     }
